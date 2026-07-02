@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スマイル歯科クリニック|痛みに配慮したやさしい歯医者さん(桜台駅徒歩3分)</title>
+<meta name="description" content="スマイル歯科クリニックは桜台駅徒歩3分の歯科医院。一般歯科・小児歯科・予防歯科・ホワイトニングに対応。痛みに配慮した治療と丁寧なカウンセリング。24時間Web予約受付中。">
+<style>
+:root{
+  --mint:#3ec6ad;
+  --mint-deep:#0e9c85;
+  --mint-dark:#0b6e60;
+  --mint-pale:#e6f7f3;
+  --mint-mist:#f2fbf9;
+  --ink:#1f3a36;
+  --ink-soft:#5b7a74;
+  --white:#ffffff;
+  --cream:#fbfdfd;
+  --accent:#ffb35c;
+  --radius:20px;
+  --shadow:0 10px 40px rgba(14,156,133,.10);
+  --shadow-hover:0 18px 50px rgba(14,156,133,.18);
+  --font-sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  font-family:var(--font-sans);
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.85;
+  font-size:16px;
+  letter-spacing:.02em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer}
+
+/* ===== Header ===== */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(255,255,255,.86);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  transition:box-shadow .3s ease;
+}
+.header.is-scrolled{box-shadow:0 4px 24px rgba(14,156,133,.12)}
+.header__inner{
+  max-width:1140px;margin:0 auto;padding:0 24px;
+  height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.1rem;color:var(--mint-dark);letter-spacing:.04em}
+.logo__mark{width:38px;height:38px;flex-shrink:0}
+.logo small{display:block;font-size:.62rem;font-weight:600;color:var(--ink-soft);letter-spacing:.18em;line-height:1.2}
+.gnav{display:flex;align-items:center;gap:6px}
+.gnav a{
+  font-size:.88rem;font-weight:600;color:var(--ink);
+  padding:8px 14px;border-radius:999px;transition:background .25s,color .25s;
+}
+.gnav a:hover{background:var(--mint-pale);color:var(--mint-dark)}
+.btn-reserve{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,var(--mint) 0%,var(--mint-deep) 100%);
+  color:#fff;font-weight:700;font-size:.9rem;
+  padding:11px 22px;border-radius:999px;border:none;
+  box-shadow:0 6px 18px rgba(14,156,133,.35);
+  transition:transform .25s,box-shadow .25s;
+}
+.btn-reserve:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(14,156,133,.45)}
+.menu-btn{
+  display:none;width:44px;height:44px;border:none;background:none;position:relative;z-index:110;
+}
+.menu-btn span{
+  display:block;width:24px;height:2px;background:var(--mint-dark);margin:5px auto;border-radius:2px;
+  transition:transform .3s,opacity .3s;
+}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;
+  padding:150px 24px 90px;
+  background:
+    radial-gradient(ellipse 80% 60% at 85% 15%, rgba(62,198,173,.14) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 10% 90%, rgba(255,179,92,.10) 0%, transparent 60%),
+    linear-gradient(175deg,#ffffff 0%,var(--mint-mist) 55%,var(--mint-pale) 100%);
+  overflow:hidden;
+}
+.hero__inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:2}
+.hero__eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid rgba(62,198,173,.35);
+  color:var(--mint-deep);font-size:.8rem;font-weight:700;letter-spacing:.1em;
+  padding:7px 18px;border-radius:999px;margin-bottom:22px;
+  box-shadow:0 4px 14px rgba(14,156,133,.08);
+}
+.hero h1{
+  font-size:clamp(1.9rem,4.2vw,3rem);
+  font-weight:800;line-height:1.45;letter-spacing:.03em;
+  margin-bottom:20px;
+}
+.hero h1 .u-mint{
+  background:linear-gradient(transparent 62%,rgba(62,198,173,.35) 62%);
+  padding:0 2px;
+}
+.hero__lead{color:var(--ink-soft);font-size:1.02rem;max-width:32em;margin-bottom:34px}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn-primary{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:linear-gradient(135deg,var(--mint) 0%,var(--mint-deep) 100%);
+  color:#fff;font-weight:700;font-size:1.02rem;
+  padding:17px 38px;border-radius:999px;border:none;
+  box-shadow:0 10px 28px rgba(14,156,133,.38);
+  transition:transform .25s,box-shadow .25s;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(14,156,133,.5)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  color:var(--mint-dark);font-weight:700;font-size:.95rem;
+  padding:16px 28px;border-radius:999px;
+  border:2px solid rgba(14,156,133,.35);background:#fff;
+  transition:border-color .25s,background .25s;
+}
+.btn-ghost:hover{border-color:var(--mint-deep);background:var(--mint-mist)}
+.hero__note{width:100%;font-size:.8rem;color:var(--ink-soft);margin-top:4px}
+.hero__visual{position:relative;display:flex;justify-content:center}
+.hero__visual svg{width:min(420px,100%);height:auto;filter:drop-shadow(0 24px 40px rgba(14,156,133,.18))}
+.hero__badge{
+  position:absolute;background:#fff;border-radius:16px;
+  box-shadow:0 10px 30px rgba(14,156,133,.16);
+  padding:12px 18px;font-size:.8rem;font-weight:700;line-height:1.5;
+  display:flex;align-items:center;gap:10px;
+  animation:float 5s ease-in-out infinite;
+}
+.hero__badge b{font-size:1.05rem;color:var(--mint-deep)}
+.hero__badge--1{top:6%;left:-4%;animation-delay:0s}
+.hero__badge--2{bottom:10%;right:-2%;animation-delay:2.5s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hero__wave{position:absolute;bottom:-1px;left:0;width:100%;line-height:0;z-index:1}
+.hero__wave svg{width:100%;height:70px}
+
+/* ===== Sections base ===== */
+.section{padding:96px 24px}
+.section--mist{background:linear-gradient(180deg,var(--mint-mist) 0%,#fff 100%)}
+.section__inner{max-width:1140px;margin:0 auto}
+.sec-head{text-align:center;margin-bottom:56px}
+.sec-head__en{
+  display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.32em;
+  color:var(--mint);text-transform:uppercase;margin-bottom:12px;
+}
+.sec-head h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;letter-spacing:.05em;line-height:1.5}
+.sec-head p{color:var(--ink-soft);margin-top:14px;font-size:.95rem}
+.sec-head__bar{width:52px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--mint),var(--accent));margin:18px auto 0}
+
+/* ===== 3 promises ===== */
+.promise{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.promise__card{
+  background:#fff;border-radius:var(--radius);padding:38px 30px;
+  box-shadow:var(--shadow);text-align:center;
+  border-top:4px solid var(--mint);
+  transition:transform .3s,box-shadow .3s;
+}
+.promise__card:nth-child(2){border-top-color:var(--accent)}
+.promise__card:nth-child(3){border-top-color:#7ad4f0}
+.promise__card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover)}
+.promise__icon{
+  width:76px;height:76px;margin:0 auto 20px;border-radius:50%;
+  background:var(--mint-pale);display:flex;align-items:center;justify-content:center;
+  font-size:2rem;
+}
+.promise__num{font-size:.72rem;font-weight:800;letter-spacing:.25em;color:var(--mint);margin-bottom:8px}
+.promise__card h3{font-size:1.12rem;font-weight:800;margin-bottom:12px;letter-spacing:.04em}
+.promise__card p{font-size:.88rem;color:var(--ink-soft);text-align:left}
+
+/* ===== Services ===== */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.svc{
+  background:#fff;border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;
+  display:flex;flex-direction:column;
+}
+.svc:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover)}
+.svc__visual{
+  height:120px;display:flex;align-items:center;justify-content:center;font-size:3rem;
+  position:relative;overflow:hidden;
+}
+.svc__visual::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 70% 20%,rgba(255,255,255,.5),transparent 55%);
+}
+.svc--g1 .svc__visual{background:linear-gradient(135deg,#c5f0e6,#8ee0cd)}
+.svc--g2 .svc__visual{background:linear-gradient(135deg,#ffe6c7,#ffcf94)}
+.svc--g3 .svc__visual{background:linear-gradient(135deg,#cdeffb,#9adef4)}
+.svc--g4 .svc__visual{background:linear-gradient(135deg,#e8e3fb,#c9befa)}
+.svc--g5 .svc__visual{background:linear-gradient(135deg,#ffe0e8,#ffbccd)}
+.svc--g6 .svc__visual{background:linear-gradient(135deg,#e4f5cf,#c3e89e)}
+.svc__body{padding:26px 26px 30px;flex:1;display:flex;flex-direction:column}
+.svc__body h3{font-size:1.08rem;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.svc__tag{
+  font-size:.66rem;font-weight:700;color:var(--mint-deep);
+  background:var(--mint-pale);padding:3px 10px;border-radius:999px;letter-spacing:.08em;
+}
+.svc__body p{font-size:.86rem;color:var(--ink-soft);flex:1}
+
+/* ===== Doctors ===== */
+.doctors{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.doc{
+  background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:40px 36px;display:flex;gap:28px;align-items:flex-start;
+  transition:transform .3s,box-shadow .3s;
+}
+.doc:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover)}
+.doc__avatar{width:120px;height:120px;flex-shrink:0}
+.doc__avatar svg{width:100%;height:100%}
+.doc__role{font-size:.74rem;font-weight:800;letter-spacing:.16em;color:var(--mint);margin-bottom:6px}
+.doc h3{font-size:1.25rem;font-weight:800;letter-spacing:.06em}
+.doc h3 small{font-size:.72rem;font-weight:600;color:var(--ink-soft);margin-left:10px;letter-spacing:.1em}
+.doc__license{font-size:.76rem;color:var(--ink-soft);margin:6px 0 14px;line-height:1.7}
+.doc__msg{
+  font-size:.86rem;color:var(--ink);
+  background:var(--mint-mist);border-left:3px solid var(--mint);
+  padding:14px 16px;border-radius:0 12px 12px 0;
+}
+
+/* ===== Flow ===== */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:flow}
+.flow__step{
+  background:#fff;border-radius:var(--radius);padding:32px 24px 28px;
+  box-shadow:var(--shadow);position:relative;text-align:center;
+}
+.flow__step::before{
+  counter-increment:flow;content:"0" counter(flow);
+  position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+  background:linear-gradient(135deg,var(--mint),var(--mint-deep));color:#fff;
+  font-size:.82rem;font-weight:800;letter-spacing:.08em;
+  padding:6px 20px;border-radius:999px;
+  box-shadow:0 6px 16px rgba(14,156,133,.3);
+}
+.flow__icon{font-size:2.2rem;margin:10px 0 14px}
+.flow__step h3{font-size:1rem;font-weight:800;margin-bottom:10px}
+.flow__step p{font-size:.82rem;color:var(--ink-soft);text-align:left}
+
+/* ===== Hours & Access ===== */
+.info{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:start}
+.info__card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:38px 36px}
+.info__card h3{font-size:1.1rem;font-weight:800;margin-bottom:20px;display:flex;align-items:center;gap:10px;color:var(--mint-dark)}
+.hours-table{width:100%;border-collapse:collapse;font-size:.86rem}
+.hours-table th,.hours-table td{padding:12px 6px;text-align:center;border-bottom:1px solid var(--mint-pale)}
+.hours-table thead th{font-size:.8rem;color:var(--ink-soft);font-weight:700}
+.hours-table tbody th{text-align:left;font-weight:700;white-space:nowrap}
+.hours-table .on{color:var(--mint-deep);font-weight:800;font-size:1rem}
+.hours-table .off{color:#c9d8d5}
+.hours-note{font-size:.78rem;color:var(--ink-soft);margin-top:14px;line-height:1.9}
+.access-list{font-size:.88rem}
+.access-list li{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--mint-pale);align-items:baseline}
+.access-list li:last-child{border-bottom:none}
+.access-list .k{flex-shrink:0;width:5.5em;font-weight:800;color:var(--mint-deep);font-size:.8rem}
+.map-mock{
+  margin-top:22px;border-radius:14px;overflow:hidden;
+  border:1px solid var(--mint-pale);
+}
+.map-mock svg{width:100%;height:auto}
+
+/* ===== Reserve ===== */
+.reserve{
+  background:
+    radial-gradient(ellipse 70% 90% at 15% 10%, rgba(255,255,255,.14) 0%, transparent 60%),
+    linear-gradient(135deg,var(--mint-deep) 0%,var(--mint-dark) 100%);
+  color:#fff;
+}
+.reserve .sec-head__en{color:#a9ecdf}
+.reserve .sec-head h2{color:#fff}
+.reserve .sec-head p{color:#d7f5ee}
+.reserve__grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:stretch}
+.reserve__phone{
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);
+  border-radius:var(--radius);padding:38px 34px;text-align:center;
+  display:flex;flex-direction:column;justify-content:center;
+  backdrop-filter:blur(4px);
+}
+.reserve__phone .label{font-size:.85rem;font-weight:700;letter-spacing:.14em;color:#c8f2e8;margin-bottom:10px}
+.reserve__phone .tel{font-size:clamp(1.7rem,3.4vw,2.3rem);font-weight:800;letter-spacing:.05em;color:#fff}
+.reserve__phone .tel a{transition:opacity .25s}
+.reserve__phone .tel a:hover{opacity:.8}
+.reserve__phone .sub{font-size:.8rem;color:#c8f2e8;margin-top:12px;line-height:1.9}
+.reserve__form{
+  background:#fff;border-radius:var(--radius);padding:38px 34px;color:var(--ink);
+  box-shadow:0 18px 50px rgba(0,0,0,.18);
+}
+.reserve__form h3{font-size:1.1rem;font-weight:800;margin-bottom:6px;color:var(--mint-dark);display:flex;align-items:center;gap:8px}
+.reserve__form .form-lead{font-size:.8rem;color:var(--ink-soft);margin-bottom:22px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:.8rem;font-weight:800;margin-bottom:7px}
+.field label .req{
+  font-size:.62rem;color:#fff;background:#f2766b;border-radius:6px;
+  padding:2px 7px;margin-left:8px;font-weight:700;vertical-align:1px;
+}
+.field input,.field select,.field textarea{
+  width:100%;padding:13px 15px;font-size:.92rem;font-family:inherit;color:var(--ink);
+  border:1.5px solid #d8ebe7;border-radius:12px;background:var(--cream);
+  transition:border-color .25s,box-shadow .25s;outline:none;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--mint);box-shadow:0 0 0 4px rgba(62,198,173,.15);background:#fff;
+}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-error{
+  display:none;font-size:.8rem;font-weight:700;color:#e05a4e;
+  background:#fdeeec;border-radius:10px;padding:10px 14px;margin-bottom:16px;
+}
+.form-error.is-visible{display:block}
+.reserve__form .btn-primary{width:100%;font-size:1.05rem}
+.form-done{display:none;text-align:center;padding:36px 8px}
+.form-done.is-visible{display:block}
+.form-done .icon{
+  width:78px;height:78px;margin:0 auto 20px;border-radius:50%;
+  background:var(--mint-pale);display:flex;align-items:center;justify-content:center;
+}
+.form-done h4{font-size:1.15rem;font-weight:800;color:var(--mint-dark);margin-bottom:12px}
+.form-done p{font-size:.86rem;color:var(--ink-soft)}
+.form-done .btn-ghost{margin-top:24px}
+
+/* ===== FAQ ===== */
+.faq{max-width:760px;margin:0 auto}
+.faq__item{
+  background:#fff;border-radius:16px;box-shadow:var(--shadow);
+  margin-bottom:14px;overflow:hidden;
+}
+.faq__q{
+  width:100%;display:flex;align-items:center;gap:14px;text-align:left;
+  padding:20px 24px;background:none;border:none;
+  font-size:.95rem;font-weight:800;color:var(--ink);line-height:1.6;
+}
+.faq__q .q-mark{
+  flex-shrink:0;width:32px;height:32px;border-radius:50%;
+  background:linear-gradient(135deg,var(--mint),var(--mint-deep));color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;
+}
+.faq__q .chev{
+  margin-left:auto;flex-shrink:0;transition:transform .3s;color:var(--mint);
+}
+.faq__item.is-open .faq__q .chev{transform:rotate(180deg)}
+.faq__a{
+  max-height:0;overflow:hidden;transition:max-height .4s ease;
+}
+.faq__a-inner{
+  padding:0 24px 22px 70px;font-size:.87rem;color:var(--ink-soft);
+}
+
+/* ===== Footer ===== */
+.footer{
+  background:var(--ink);color:#cfe6e1;padding:64px 24px 32px;
+}
+.footer__inner{max-width:1140px;margin:0 auto}
+.footer__top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:36px;margin-bottom:44px}
+.footer .logo{color:#fff}
+.footer .logo small{color:#8fb5ae}
+.footer__addr{font-size:.82rem;margin-top:16px;line-height:2}
+.footer__nav{display:flex;gap:28px;flex-wrap:wrap;font-size:.84rem;font-weight:600}
+.footer__nav a{transition:color .25s}
+.footer__nav a:hover{color:var(--mint)}
+.footer__copy{
+  text-align:center;font-size:.72rem;color:#7fa39c;
+  border-top:1px solid rgba(255,255,255,.12);padding-top:26px;letter-spacing:.08em;
+}
+
+/* ===== Reveal animation ===== */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.is-in{opacity:1;transform:translateY(0)}
+.reveal[data-delay="1"]{transition-delay:.12s}
+.reveal[data-delay="2"]{transition-delay:.24s}
+.reveal[data-delay="3"]{transition-delay:.36s}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .hero__badge{animation:none}
+  html{scroll-behavior:auto}
+}
+
+/* ===== Mobile ===== */
+@media (max-width:960px){
+  .hero__inner{grid-template-columns:1fr;gap:40px}
+  .hero__visual{order:-1}
+  .hero__visual svg{width:min(300px,80%)}
+  .hero__badge--1{left:2%}
+  .hero__badge--2{right:2%}
+  .promise,.services{grid-template-columns:1fr 1fr}
+  .doctors{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr 1fr;gap:28px 20px}
+  .info,.reserve__grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .section{padding:72px 20px}
+  .hero{padding:120px 20px 70px}
+  .promise,.services,.flow{grid-template-columns:1fr}
+  .flow{gap:30px}
+  .field-row{grid-template-columns:1fr}
+  .doc{flex-direction:column;align-items:center;text-align:center;padding:34px 26px}
+  .doc__msg{text-align:left}
+  .faq__a-inner{padding-left:24px}
+  .menu-btn{display:block}
+  .gnav{
+    position:fixed;inset:0;background:rgba(255,255,255,.97);
+    flex-direction:column;justify-content:center;gap:10px;
+    opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:105;
+  }
+  .gnav.is-open{opacity:1;visibility:visible}
+  .gnav a{font-size:1.1rem;padding:12px 28px}
+  .header .btn-reserve{display:none}
+  .gnav .btn-reserve{display:inline-flex;margin-top:14px;font-size:1rem;padding:14px 34px}
+}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="header__inner">
+    <a class="logo" href="#top" aria-label="スマイル歯科クリニック トップへ">
+      <svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" fill="#e6f7f3"/>
+        <path d="M15 14c-3.4 0-5.5 3-5.5 7 0 5.5 2.6 13.5 5 13.5 1.8 0 1.7-4.3 2.6-7.3.5-1.7 1.5-2.6 2.9-2.6s2.4.9 2.9 2.6c.9 3 .8 7.3 2.6 7.3 2.4 0 5-8 5-13.5 0-4-2.1-7-5.5-7-2.2 0-3.2 1.2-5 1.2S17.2 14 15 14z" fill="#3ec6ad" transform="translate(4 0)"/>
+        <circle cx="36" cy="13" r="4.5" fill="#ffb35c"/>
+        <path d="M34 13l1.6 1.6 2.6-2.9" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>スマイル歯科クリニック<small>SMILE DENTAL CLINIC</small></span>
+    </a>
+    <nav class="gnav" id="gnav" aria-label="メインナビゲーション">
+      <a href="#services">診療案内</a>
+      <a href="#doctors">医師紹介</a>
+      <a href="#flow">初診の流れ</a>
+      <a href="#access">診療時間・アクセス</a>
+      <a href="#faq">よくある質問</a>
+      <a class="btn-reserve" href="#reserve">🗓 Web予約</a>
+    </nav>
+    <a class="btn-reserve" href="#reserve">🗓 Web予約</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="gnav" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div>
+        <span class="hero__eyebrow">🦷 桜台駅 南口より徒歩3分</span>
+        <h1>「歯医者さん、<br>ちょっと好きかも」を、<br><span class="u-mint">この街のあたりまえ</span>に。</h1>
+        <p class="hero__lead">スマイル歯科クリニックは、痛みへの配慮と丁寧なカウンセリングを大切にする、地域のかかりつけ歯科医院です。お子さまからご年配の方まで、家族みんなで安心して通える場所を目指しています。</p>
+        <div class="hero__cta">
+          <a class="btn-primary" href="#reserve">🗓 Web予約はこちら</a>
+          <a class="btn-ghost" href="#services">診療案内を見る</a>
+          <p class="hero__note">※ 24時間受付・当日予約も空きがあればご案内できます</p>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <svg viewBox="0 0 340 340" role="img" aria-label="輝く歯のイラスト">
+          <defs>
+            <linearGradient id="toothGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="100%" stop-color="#d9f4ee"/>
+            </linearGradient>
+            <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#3ec6ad"/>
+              <stop offset="100%" stop-color="#7ad4f0"/>
+            </linearGradient>
+          </defs>
+          <circle cx="170" cy="170" r="150" fill="none" stroke="url(#ringGrad)" stroke-width="2.5" stroke-dasharray="6 12" opacity=".55"/>
+          <circle cx="170" cy="170" r="122" fill="#ffffff" opacity=".75"/>
+          <circle cx="170" cy="170" r="122" fill="none" stroke="#c9efe6" stroke-width="1.5"/>
+          <path d="M128 96c-20 0-33 18-33 41 0 33 15 82 30 82 11 0 10-26 15-44 3-10 9-16 18-16s15 6 18 16c5 18 4 44 15 44 15 0 30-49 30-82 0-23-13-41-33-41-13 0-19 7-30 7s-17-7-30-7z" fill="url(#toothGrad)" stroke="#a8e3d6" stroke-width="3" transform="translate(12 4)"/>
+          <path d="M116 118c-4 6-6 14-6 22" stroke="#3ec6ad" stroke-width="4" stroke-linecap="round" fill="none" opacity=".5"/>
+          <g fill="#ffb35c">
+            <path d="M258 78l4.5 11 11 4.5-11 4.5-4.5 11-4.5-11-11-4.5 11-4.5z"/>
+            <path d="M78 220l3 7.5 7.5 3-7.5 3-3 7.5-3-7.5-7.5-3 7.5-3z" opacity=".85"/>
+          </g>
+          <g fill="#3ec6ad" opacity=".7">
+            <circle cx="66" cy="110" r="5"/>
+            <circle cx="278" cy="212" r="6"/>
+            <circle cx="246" cy="268" r="4"/>
+          </g>
+          <path d="M132 208q38 26 76 0" stroke="#0e9c85" stroke-width="5" stroke-linecap="round" fill="none"/>
+        </svg>
+        <div class="hero__badge hero__badge--1">😊 <span>キッズスペース<br>完備</span></div>
+        <div class="hero__badge hero__badge--2">🗓 <b>24時間</b><span>Web予約<br>受付中</span></div>
+      </div>
+    </div>
+    <div class="hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+        <path d="M0 45 C240 8 480 8 720 38 C960 68 1200 60 1440 28 L1440 70 L0 70 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== Promises ===== -->
+  <section class="section">
+    <div class="section__inner">
+      <div class="sec-head reveal">
+        <span class="sec-head__en">Our Promise</span>
+        <h2>スマイル歯科の 3つのお約束</h2>
+        <div class="sec-head__bar"></div>
+      </div>
+      <div class="promise">
+        <div class="promise__card reveal">
+          <div class="promise__icon">💉</div>
+          <div class="promise__num">PROMISE 01</div>
+          <h3>痛みに、とことん配慮</h3>
+          <p>表面麻酔・極細針・電動注射器の3ステップで、麻酔の痛みそのものを最小限に。「気づいたら終わっていた」と言っていただける治療を目指します。</p>
+        </div>
+        <div class="promise__card reveal" data-delay="1">
+          <div class="promise__icon">🗣</div>
+          <div class="promise__num">PROMISE 02</div>
+          <h3>説明してから、治療する</h3>
+          <p>口腔内カメラの画像をモニターでお見せしながら、現状と治療の選択肢を費用まで含めてご説明。同意のない治療は行いません。</p>
+        </div>
+        <div class="promise__card reveal" data-delay="2">
+          <div class="promise__icon">⏱</div>
+          <div class="promise__num">PROMISE 03</div>
+          <h3>待たせない予約制</h3>
+          <p>完全予約制で待ち時間は平均8分以内。お仕事帰りに通える平日夜19時まで、土曜も17時まで診療しています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Services ===== -->
+  <section class="section section--mist" id="services">
+    <div class="section__inner">
+      <div class="sec-head reveal">
+        <span class="sec-head__en">Services</span>
+        <h2>診療案内</h2>
+        <p>むし歯治療から予防・審美まで、お口の健康をトータルにサポートします。</p>
+        <div class="sec-head__bar"></div>
+      </div>
+      <div class="services">
+        <article class="svc svc--g1 reveal">
+          <div class="svc__visual">🦷</div>
+          <div class="svc__body">
+            <h3>一般歯科 <span class="svc__tag">保険診療</span></h3>
+            <p>むし歯・歯周病の治療、詰め物・被せ物、入れ歯まで幅広く対応。「削る量を最小限に、抜かずに残す」を基本方針に、できるだけご自身の歯を守ります。</p>
+          </div>
+        </article>
+        <article class="svc svc--g2 reveal" data-delay="1">
+          <div class="svc__visual">🧒</div>
+          <div class="svc__body">
+            <h3>小児歯科 <span class="svc__tag">保険診療</span></h3>
+            <p>「歯医者=怖い場所」にしないため、初回は器具に慣れる練習から。フッ素塗布・シーラントでむし歯を予防し、頑張ったお子さまにはガチャガチャのご褒美も。</p>
+          </div>
+        </article>
+        <article class="svc svc--g3 reveal" data-delay="2">
+          <div class="svc__visual">✨</div>
+          <div class="svc__body">
+            <h3>予防歯科・クリーニング <span class="svc__tag">保険/自費</span></h3>
+            <p>国家資格を持つ歯科衛生士による担当制のプロケア(PMTC)。3ヶ月ごとの定期メンテナンスで、治療のいらないお口を一緒に育てます。</p>
+          </div>
+        </article>
+        <article class="svc svc--g4 reveal">
+          <div class="svc__visual">😁</div>
+          <div class="svc__body">
+            <h3>ホワイトニング <span class="svc__tag">自費診療</span></h3>
+            <p>院内で行うオフィスホワイトニング(1回 ¥16,500〜)と、ご自宅でじっくり白くするホームホワイトニングをご用意。結婚式前の短期集中プランも人気です。</p>
+          </div>
+        </article>
+        <article class="svc svc--g5 reveal" data-delay="1">
+          <div class="svc__visual">🪥</div>
+          <div class="svc__body">
+            <h3>歯周病治療 <span class="svc__tag">保険診療</span></h3>
+            <p>歯を失う原因第1位の歯周病。歯周ポケット検査と位相差顕微鏡による細菌チェックで進行度を見える化し、段階に応じた治療計画をご提案します。</p>
+          </div>
+        </article>
+        <article class="svc svc--g6 reveal" data-delay="2">
+          <div class="svc__visual">🛡</div>
+          <div class="svc__body">
+            <h3>マウスピース製作 <span class="svc__tag">保険/自費</span></h3>
+            <p>歯ぎしり・食いしばりから歯を守るナイトガード、スポーツ用マウスガードをオーダーメイドで製作。朝起きたときの顎の疲れが気になる方もご相談ください。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Doctors ===== -->
+  <section class="section" id="doctors">
+    <div class="section__inner">
+      <div class="sec-head reveal">
+        <span class="sec-head__en">Doctors</span>
+        <h2>医師紹介</h2>
+        <p>経験豊富な歯科医師が、責任を持ってあなたのお口を担当します。</p>
+        <div class="sec-head__bar"></div>
+      </div>
+      <div class="doctors">
+        <article class="doc reveal">
+          <div class="doc__avatar">
+            <svg viewBox="0 0 120 120" role="img" aria-label="院長 早瀬誠のイラスト">
+              <circle cx="60" cy="60" r="58" fill="#e6f7f3"/>
+              <circle cx="60" cy="47" r="22" fill="#f6d7bd"/>
+              <path d="M38 42c0-14 10-22 22-22s22 8 22 22c0 3-1 5-2 7-2-10-8-13-20-13s-18 3-20 13c-1-2-2-4-2-7z" fill="#4a3b32"/>
+              <circle cx="52" cy="47" r="2.6" fill="#33281f"/>
+              <circle cx="68" cy="47" r="2.6" fill="#33281f"/>
+              <path d="M53 57q7 5 14 0" stroke="#c47a5a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              <path d="M24 108c3-22 18-32 36-32s33 10 36 32z" fill="#ffffff" stroke="#cfe9e3" stroke-width="2"/>
+              <path d="M60 78v28M48 80l12 10 12-10" stroke="#3ec6ad" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="doc__role">院長 / DIRECTOR</div>
+            <h3>早瀬 誠<small>HAYASE MAKOTO</small></h3>
+            <p class="doc__license">歯科医師・博士(歯学)/ 日本歯周病学会 認定医<br>桜台歯科大学卒。大学病院・都内医療法人で12年の臨床経験を経て2019年当院開院。</p>
+            <p class="doc__msg">「怖くて何年も歯医者に行けていない」——そんな方こそ、ぜひいらしてください。叱ったり驚かせたりは絶対にしません。今のお口の状態を一緒に確認するところから、ゆっくり始めましょう。</p>
+          </div>
+        </article>
+        <article class="doc reveal" data-delay="1">
+          <div class="doc__avatar">
+            <svg viewBox="0 0 120 120" role="img" aria-label="副院長 三谷ひかりのイラスト">
+              <circle cx="60" cy="60" r="58" fill="#fdf1e3"/>
+              <circle cx="60" cy="47" r="22" fill="#f9dfc8"/>
+              <path d="M36 50c-2-18 9-28 24-28s26 10 24 28c-1 8-4 12-4 12l-2-16c-6 4-12 5-18 5s-12-1-18-5l-2 16s-3-4-4-12z" fill="#6b4a35"/>
+              <circle cx="52" cy="47" r="2.6" fill="#33281f"/>
+              <circle cx="68" cy="47" r="2.6" fill="#33281f"/>
+              <path d="M53 57q7 5 14 0" stroke="#c47a5a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              <path d="M24 108c3-22 18-32 36-32s33 10 36 32z" fill="#ffffff" stroke="#f3ddc2" stroke-width="2"/>
+              <path d="M60 78v28M48 80l12 10 12-10" stroke="#ffb35c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="doc__role">副院長 / VICE DIRECTOR</div>
+            <h3>三谷 ひかり<small>MITANI HIKARI</small></h3>
+            <p class="doc__license">歯科医師 / 日本小児歯科学会 会員<br>小児歯科・予防歯科を専門に9年。二児の母として、子育て世代の通いやすさを追求。</p>
+            <p class="doc__msg">お子さまの診療では「今日できたこと」を必ず見つけて褒めるようにしています。仕上げ磨きのコツや卒乳後のケアなど、育児中のお悩みも気軽に聞いてくださいね。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Flow ===== -->
+  <section class="section section--mist" id="flow">
+    <div class="section__inner">
+      <div class="sec-head reveal">
+        <span class="sec-head__en">First Visit</span>
+        <h2>初めての方へ ― 初診の流れ</h2>
+        <p>初診は約60分。カウンセリングと検査に、じっくり時間をかけます。</p>
+        <div class="sec-head__bar"></div>
+      </div>
+      <div class="flow">
+        <div class="flow__step reveal">
+          <div class="flow__icon">🗓</div>
+          <h3>Web予約</h3>
+          <p>下のフォームから24時間いつでも。保険証(マイナ保険証)とお薬手帳をお持ちください。</p>
+        </div>
+        <div class="flow__step reveal" data-delay="1">
+          <div class="flow__icon">📋</div>
+          <h3>カウンセリング</h3>
+          <p>個室のカウンセリングルームで、症状やご希望、過去の歯科での不安な経験などをお伺いします。</p>
+        </div>
+        <div class="flow__step reveal" data-delay="2">
+          <div class="flow__icon">🔍</div>
+          <h3>検査・診断</h3>
+          <p>デジタルレントゲンと口腔内カメラで精密検査。画像を見ながら現状をわかりやすくご説明します。</p>
+        </div>
+        <div class="flow__step reveal" data-delay="3">
+          <div class="flow__icon">🤝</div>
+          <h3>治療計画のご提案</h3>
+          <p>期間・回数・費用を明示した治療計画をご提案。ご納得いただいてから治療を開始します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Hours / Access ===== -->
+  <section class="section" id="access">
+    <div class="section__inner">
+      <div class="sec-head reveal">
+        <span class="sec-head__en">Hours &amp; Access</span>
+        <h2>診療時間・アクセス</h2>
+        <div class="sec-head__bar"></div>
+      </div>
+      <div class="info">
+        <div class="info__card reveal">
+          <h3>⏰ 診療時間</h3>
+          <table class="hours-table">
+            <thead>
+              <tr><th scope="col">時間</th><th scope="col">月</th><th scope="col">火</th><th scope="col">水</th><th scope="col">木</th><th scope="col">金</th><th scope="col">土</th><th scope="col">日祝</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">9:30 - 13:00</th>
+                <td class="on">●</td><td class="on">●</td><td class="on">●</td><td class="off">―</td><td class="on">●</td><td class="on">●</td><td class="off">―</td>
+              </tr>
+              <tr>
+                <th scope="row">14:30 - 19:00</th>
+                <td class="on">●</td><td class="on">●</td><td class="on">●</td><td class="off">―</td><td class="on">●</td><td class="on">▲</td><td class="off">―</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="hours-note">▲ 土曜午後は 14:30〜17:00 まで/休診日:木曜・日曜・祝日<br>最終受付は診療終了の30分前です。急な痛みの場合はお電話でご相談ください。</p>
+        </div>
+        <div class="info__card reveal" data-delay="1">
+          <h3>📍 アクセス</h3>
+          <ul class="access-list">
+            <li><span class="k">住所</span><span>〒176-0002 東京都練馬区桜台1-24-6 スマイルビル1F</span></li>
+            <li><span class="k">最寄駅</span><span>西武池袋線「桜台駅」南口より徒歩3分</span></li>
+            <li><span class="k">駐車場</span><span>提携コインパーキング2台分(受付で駐車券をご提示ください)</span></li>
+            <li><span class="k">設備</span><span>バリアフリー対応・キッズスペース・ベビーカー入店可</span></li>
+          </ul>
+          <div class="map-mock" aria-hidden="true">
+            <svg viewBox="0 0 400 190">
+              <rect width="400" height="190" fill="#eef8f5"/>
+              <path d="M0 60 H400" stroke="#cfe9e3" stroke-width="14"/>
+              <path d="M0 60 H400" stroke="#fff" stroke-width="2" stroke-dasharray="14 12"/>
+              <path d="M120 0 V190" stroke="#d8ede8" stroke-width="10"/>
+              <path d="M290 0 V190" stroke="#d8ede8" stroke-width="8"/>
+              <path d="M0 140 H400" stroke="#e0f0ec" stroke-width="8"/>
+              <rect x="20" y="80" width="70" height="40" rx="5" fill="#dcefe9"/>
+              <rect x="150" y="152" width="90" height="30" rx="5" fill="#dcefe9"/>
+              <rect x="310" y="76" width="70" height="46" rx="5" fill="#dcefe9"/>
+              <rect x="30" y="22" width="64" height="22" rx="11" fill="#8fd8c8"/>
+              <text x="62" y="37" font-size="11" fill="#fff" text-anchor="middle" font-weight="bold" font-family="sans-serif">桜台駅</text>
+              <g transform="translate(200 84)">
+                <circle r="26" fill="#3ec6ad" opacity=".18"/>
+                <path d="M0-24c-10 0-17 8-17 18C-17 8 0 24 0 24S17 8 17-6c0-10-7-18-17-18z" fill="#0e9c85"/>
+                <text y="-1" font-size="15" text-anchor="middle" fill="#fff">🦷</text>
+              </g>
+              <text x="200" y="132" font-size="11" fill="#0b6e60" text-anchor="middle" font-weight="bold" font-family="sans-serif">スマイル歯科クリニック</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Reserve ===== -->
+  <section class="section reserve" id="reserve">
+    <div class="section__inner">
+      <div class="sec-head reveal">
+        <span class="sec-head__en">Reservation</span>
+        <h2>ご予約はこちら</h2>
+        <p>Webなら24時間いつでも受付。翌診療日までに確定のご連絡をいたします。</p>
+        <div class="sec-head__bar"></div>
+      </div>
+      <div class="reserve__grid">
+        <div class="reserve__phone reveal">
+          <p class="label">📞 お電話でのご予約・急患</p>
+          <p class="tel"><a href="tel:0359031240">03-5903-1240</a></p>
+          <p class="sub">受付時間:診療時間内<br>強い痛み・詰め物が取れた等のトラブルは<br>お電話いただければ当日調整いたします。</p>
+        </div>
+        <div class="reserve__form reveal" data-delay="1">
+          <form id="reserveForm" novalidate>
+            <h3>🗓 Web予約フォーム</h3>
+            <p class="form-lead">ご希望日時をお選びください。空き状況を確認のうえ、確定のご連絡を差し上げます。</p>
+            <p class="form-error" id="formError" role="alert"></p>
+            <div class="field">
+              <label for="fName">お名前<span class="req">必須</span></label>
+              <input type="text" id="fName" name="name" autocomplete="name" placeholder="例)佐藤 はな">
+            </div>
+            <div class="field">
+              <label for="fTel">お電話番号<span class="req">必須</span></label>
+              <input type="tel" id="fTel" name="tel" autocomplete="tel" inputmode="tel" placeholder="例)090-1234-5678">
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="fDate">ご希望日<span class="req">必須</span></label>
+                <input type="date" id="fDate" name="date">
+              </div>
+              <div class="field">
+                <label for="fTime">ご希望時間帯</label>
+                <select id="fTime" name="time">
+                  <option value="午前(9:30-13:00)">午前(9:30-13:00)</option>
+                  <option value="午後(14:30-17:00)">午後(14:30-17:00)</option>
+                  <option value="夕方(17:00-19:00)">夕方(17:00-19:00)</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="fMenu">ご相談内容</label>
+              <select id="fMenu" name="menu">
+                <option value="むし歯・歯の痛み">むし歯・歯の痛み</option>
+                <option value="定期検診・クリーニング">定期検診・クリーニング</option>
+                <option value="お子さまの診療">お子さまの診療</option>
+                <option value="ホワイトニング">ホワイトニング</option>
+                <option value="歯ぐきの出血・歯周病">歯ぐきの出血・歯周病</option>
+                <option value="その他・相談したい">その他・相談したい</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="fNote">備考(任意)</label>
+              <textarea id="fNote" name="note" rows="3" placeholder="気になる症状やご希望があればご記入ください"></textarea>
+            </div>
+            <button type="submit" class="btn-primary">この内容で予約リクエストを送る</button>
+          </form>
+          <div class="form-done" id="formDone">
+            <div class="icon">
+              <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true">
+                <circle cx="21" cy="21" r="20" fill="#3ec6ad"/>
+                <path d="M12 22l6.5 6.5L30 15" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h4>予約リクエストを受け付けました</h4>
+            <p id="doneSummary"></p>
+            <p style="margin-top:10px">翌診療日までに、お電話にて確定のご連絡をいたします。<br>それまで少々お待ちください。</p>
+            <button type="button" class="btn-ghost" id="doneReset">別の予約をリクエストする</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section" id="faq">
+    <div class="section__inner">
+      <div class="sec-head reveal">
+        <span class="sec-head__en">FAQ</span>
+        <h2>よくある質問</h2>
+        <div class="sec-head__bar"></div>
+      </div>
+      <div class="faq">
+        <div class="faq__item reveal">
+          <button class="faq__q" aria-expanded="false">
+            <span class="q-mark">Q</span>初診の費用はどれくらいかかりますか?
+            <svg class="chev" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 7l5 5 5-5" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq__a"><p class="faq__a-inner">保険診療(3割負担)の場合、検査・レントゲンを含めて3,500円前後が目安です。治療内容によって前後しますので、費用が気になる場合は事前に遠慮なくお尋ねください。</p></div>
+        </div>
+        <div class="faq__item reveal">
+          <button class="faq__q" aria-expanded="false">
+            <span class="q-mark">Q</span>子どもは何歳から診てもらえますか?
+            <svg class="chev" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 7l5 5 5-5" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq__a"><p class="faq__a-inner">歯が生え始めたら(生後6ヶ月頃〜)何歳でもどうぞ。最初は診療台に座る練習からで大丈夫です。キッズスペースがあり、保護者の方の治療中にスタッフがお子さまを見守ることもできます。</p></div>
+        </div>
+        <div class="faq__item reveal">
+          <button class="faq__q" aria-expanded="false">
+            <span class="q-mark">Q</span>何年も歯医者に行っていなくて不安です…。
+            <svg class="chev" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 7l5 5 5-5" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq__a"><p class="faq__a-inner">当院の患者さまの約3割が「久しぶりの歯科受診」の方です。責めたり驚かせたりすることは決してありません。初回はカウンセリングと検査だけで終えることもできますので、ご希望を予約時の備考欄にお書きください。</p></div>
+        </div>
+        <div class="faq__item reveal">
+          <button class="faq__q" aria-expanded="false">
+            <span class="q-mark">Q</span>クレジットカードは使えますか?
+            <svg class="chev" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 7l5 5 5-5" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="faq__a"><p class="faq__a-inner">自費診療は各種クレジットカード・電子マネー・QRコード決済がご利用いただけます。保険診療は現金のほかマイナ保険証に紐づく口座振替にも順次対応予定です。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div>
+        <a class="logo" href="#top">
+          <svg class="logo__mark" viewBox="0 0 48 48" aria-hidden="true">
+            <circle cx="24" cy="24" r="23" fill="rgba(255,255,255,.12)"/>
+            <path d="M15 14c-3.4 0-5.5 3-5.5 7 0 5.5 2.6 13.5 5 13.5 1.8 0 1.7-4.3 2.6-7.3.5-1.7 1.5-2.6 2.9-2.6s2.4.9 2.9 2.6c.9 3 .8 7.3 2.6 7.3 2.4 0 5-8 5-13.5 0-4-2.1-7-5.5-7-2.2 0-3.2 1.2-5 1.2S17.2 14 15 14z" fill="#3ec6ad" transform="translate(4 0)"/>
+          </svg>
+          <span>スマイル歯科クリニック<small>SMILE DENTAL CLINIC</small></span>
+        </a>
+        <p class="footer__addr">〒176-0002 東京都練馬区桜台1-24-6 スマイルビル1F<br>TEL: 03-5903-1240(診療時間内)</p>
+      </div>
+      <nav class="footer__nav" aria-label="フッターナビゲーション">
+        <a href="#services">診療案内</a>
+        <a href="#doctors">医師紹介</a>
+        <a href="#flow">初診の流れ</a>
+        <a href="#access">アクセス</a>
+        <a href="#reserve">Web予約</a>
+      </nav>
+    </div>
+    <p class="footer__copy">当サイトは架空の歯科医院のデモサイトです。<br>© 2026 masafykun</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---- Header shadow on scroll ---- */
+  var header = document.getElementById("header");
+  function onScroll() {
+    if (window.scrollY > 10) {
+      header.classList.add("is-scrolled");
+    } else {
+      header.classList.remove("is-scrolled");
+    }
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* ---- Mobile menu ---- */
+  var menuBtn = document.getElementById("menuBtn");
+  var gnav = document.getElementById("gnav");
+  function closeMenu() {
+    gnav.classList.remove("is-open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.setAttribute("aria-label", "メニューを開く");
+  }
+  menuBtn.addEventListener("click", function () {
+    var open = gnav.classList.toggle("is-open");
+    menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    menuBtn.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
+  });
+  gnav.addEventListener("click", function (e) {
+    if (e.target.closest("a")) closeMenu();
+  });
+
+  /* ---- Scroll reveal ---- */
+  var reveals = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("is-in"); });
+  }
+
+  /* ---- FAQ accordion ---- */
+  document.querySelectorAll(".faq__item").forEach(function (item) {
+    var btn = item.querySelector(".faq__q");
+    var panel = item.querySelector(".faq__a");
+    btn.addEventListener("click", function () {
+      var isOpen = item.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      panel.style.maxHeight = isOpen ? panel.scrollHeight + "px" : "0px";
+    });
+  });
+
+  /* ---- Reservation form ---- */
+  var form = document.getElementById("reserveForm");
+  var formError = document.getElementById("formError");
+  var formDone = document.getElementById("formDone");
+  var doneSummary = document.getElementById("doneSummary");
+  var doneReset = document.getElementById("doneReset");
+  var dateInput = document.getElementById("fDate");
+
+  // 予約は明日以降のみ受け付ける
+  var tomorrow = new Date(Date.now() + 24 * 60 * 60 * 1000);
+  var pad = function (n) { return String(n).padStart(2, "0"); };
+  dateInput.min = tomorrow.getFullYear() + "-" + pad(tomorrow.getMonth() + 1) + "-" + pad(tomorrow.getDate());
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var name = document.getElementById("fName").value.trim();
+    var tel = document.getElementById("fTel").value.trim();
+    var date = dateInput.value;
+    var errors = [];
+
+    if (!name) errors.push("お名前");
+    if (!tel) {
+      errors.push("お電話番号");
+    } else if (!/^[0-9+\-() ]{10,15}$/.test(tel)) {
+      errors.push("お電話番号(半角数字でご入力ください)");
+    }
+    if (!date) {
+      errors.push("ご希望日");
+    } else if (date < dateInput.min) {
+      errors.push("ご希望日(明日以降の日付をお選びください)");
+    }
+
+    if (errors.length > 0) {
+      formError.textContent = "次の項目をご確認ください:" + errors.join(" / ");
+      formError.classList.add("is-visible");
+      formError.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+
+    formError.classList.remove("is-visible");
+    var time = document.getElementById("fTime").value;
+    var menu = document.getElementById("fMenu").value;
+    var d = new Date(date + "T00:00:00");
+    var youbi = ["日", "月", "火", "水", "木", "金", "土"][d.getDay()];
+    doneSummary.textContent = name + " 様/" +
+      d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日(" + youbi + ")" +
+      " " + time + "/" + menu;
+    form.style.display = "none";
+    formDone.classList.add("is-visible");
+  });
+
+  doneReset.addEventListener("click", function () {
+    form.reset();
+    form.style.display = "";
+    formDone.classList.remove("is-visible");
+  });
+})();
+</script>
+</body>
+</html>
